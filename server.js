@@ -2,14 +2,23 @@ const express = require("express");
 const sqlite3 = require("sqlite3").verbose();
 const cors = require("cors");
 const path = require("path");
+const fs = require("fs");
 
 const app = express();
 
 const PORT = process.env.PORT || 3000;
 
-const rutaBD = path.join(
+const carpetaBD = path.join(
     __dirname,
-    "database",
+    "database"
+);
+
+if (!fs.existsSync(carpetaBD)) {
+    fs.mkdirSync(carpetaBD, { recursive: true });
+}
+
+const rutaBD = path.join(
+    carpetaBD,
     "actividades.db"
 );
 
@@ -53,7 +62,38 @@ const db = new sqlite3.Database(
             console.log(
                 "✅ Conectado a SQLite."
             );
+const rutaSQL = path.join(
+    __dirname,
+    "sql",
+    "estructura.sql"
+);
 
+const estructuraSQL = fs.readFileSync(
+    rutaSQL,
+    "utf8"
+);
+
+db.exec(
+    estructuraSQL,
+    (error) => {
+
+        if (error) {
+
+            console.error(
+                "❌ Error creando las tablas:",
+                error.message
+            );
+
+        } else {
+
+            console.log(
+                "✅ Base de datos inicializada correctamente."
+            );
+
+        }
+
+    }
+);
         }
 
     }
