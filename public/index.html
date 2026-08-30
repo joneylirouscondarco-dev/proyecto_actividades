@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Registro de Actividades</title>
+
+    <link
+        rel="stylesheet"
+        href="estilos.css"
+    >
+
+</head>
+
+
+<body>
+
+    <div class="contenedor">
+
+        <h1>Registro de Actividades</h1>
+
+
+        <!-- ======================================
+             CONSULTAR
+        ======================================= -->
+
+        <section class="seccion">
+
+            <h2>Consultar actividades</h2>
+
+            <form
+                id="formConsulta"
+                class="formulario"
+            >
+
+                <div class="campo">
+
+                    <label for="fechaConsulta">
+                        Fecha
+                    </label>
+
+                    <input
+                        type="date"
+                        id="fechaConsulta"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="horaConsulta">
+                        Hora (opcional)
+                    </label>
+
+                    <input
+                        type="time"
+                        id="horaConsulta"
+                        step="1"
+                    >
+
+                </div>
+
+
+                <div class="campo-completo">
+
+                    <button type="submit">
+                        Consultar actividades
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+
+        <!-- ======================================
+             RESULTADOS
+        ======================================= -->
+
+        <section class="seccion">
+
+            <h2>Resultados</h2>
+
+            <div
+                id="resultados"
+                class="tabla-contenedor"
+            >
+
+                <p>
+                    Selecciona una fecha para consultar.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================================
+             REGISTRAR
+        ======================================= -->
+
+        <section class="seccion">
+
+            <h2>Registrar nueva actividad</h2>
+
+            <form
+                id="formRegistro"
+                class="formulario"
+            >
+
+                <div class="campo">
+
+                    <label for="fecha">
+                        Fecha
+                    </label>
+
+                    <input
+                        type="date"
+                        id="fecha"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="hora">
+                        Hora
+                    </label>
+
+                    <input
+                        type="time"
+                        id="hora"
+                        step="1"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="campo-completo campo">
+
+                    <label for="actividad">
+                        Actividad
+                    </label>
+
+                    <input
+                        type="text"
+                        id="actividad"
+                        placeholder="Escribe la actividad"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="duracion">
+                        Duración
+                    </label>
+
+                    <input
+                        type="text"
+                        id="duracion"
+                        placeholder="Ej: 30 MINUTOS"
+                    >
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="clasificacion">
+                        Clasificación
+                    </label>
+
+                    <select
+                        id="clasificacion"
+                        required
+                    >
+
+                        <option value="">
+                            Seleccionar
+                        </option>
+
+                        <option value="REGISTRO">
+                            REGISTRO
+                        </option>
+
+                        <option value="HABITO">
+                            HABITO
+                        </option>
+
+                        <option value="TO DO">
+                            TO DO
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="tipo">
+                        Tipo
+                    </label>
+
+                    <select id="tipo">
+
+                        <option value="">
+                            Sin tipo
+                        </option>
+
+                        <option value="PRODUCTIVO">
+                            PRODUCTIVO
+                        </option>
+
+                        <option value="NO PRODUCTIVO">
+                            NO PRODUCTIVO
+                        </option>
+
+                        <option value="DORMIR">
+                            DORMIR
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="campo-completo">
+
+                    <button type="submit">
+                        Registrar actividad
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+    </div>
+
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
