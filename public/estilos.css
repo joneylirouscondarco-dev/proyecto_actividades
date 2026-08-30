@@ -6,7 +6,8 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 30px;
-    background: #f4f6f8;
+    background: #f3eafa;
+    color: #2d2438;
 }
 
 .contenedor {
@@ -14,22 +15,40 @@ body {
     margin: auto;
 }
 
+/* ==============================
+   TITULO PRINCIPAL
+============================== */
+
 h1 {
     text-align: center;
     margin-bottom: 30px;
+    color: #6a1b9a;
+    font-size: 34px;
+    font-weight: bold;
 }
 
+/* ==============================
+   SECCIONES
+============================== */
+
 .seccion {
-    background: white;
+    background: #ffffff;
     padding: 25px;
     margin-bottom: 25px;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border-radius: 14px;
+    box-shadow: 0 4px 15px rgba(106, 27, 154, 0.12);
+    border-top: 5px solid #8e44ad;
 }
 
 h2 {
     margin-top: 0;
+    margin-bottom: 20px;
+    color: #6a1b9a;
 }
+
+/* ==============================
+   FORMULARIOS
+============================== */
 
 .formulario {
     display: grid;
@@ -49,24 +68,50 @@ h2 {
 
 label {
     font-weight: bold;
+    color: #4a235a;
 }
 
 input,
 select {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
+    padding: 11px;
+    border: 1px solid #c9a9d9;
+    border-radius: 8px;
     font-size: 15px;
+    background: #faf7fc;
+    color: #2d2438;
+    outline: none;
 }
 
+input:focus,
+select:focus {
+    border-color: #8e44ad;
+    box-shadow: 0 0 0 3px rgba(142, 68, 173, 0.15);
+}
+
+/* ==============================
+   BOTONES
+============================== */
+
 button {
-    padding: 11px 18px;
+    padding: 12px 20px;
     border: none;
-    border-radius: 6px;
+    border-radius: 8px;
     cursor: pointer;
     font-size: 15px;
     font-weight: bold;
+    background: #8e44ad;
+    color: white;
+    transition: 0.2s;
 }
+
+button:hover {
+    background: #6a1b9a;
+    transform: translateY(-1px);
+}
+
+/* ==============================
+   TABLA
+============================== */
 
 .tabla-contenedor {
     overflow-x: auto;
@@ -76,21 +121,65 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 15px;
+    background: white;
 }
 
 th,
 td {
-    padding: 10px;
-    border: 1px solid #ddd;
+    padding: 11px;
+    border: 1px solid #dccbe5;
     text-align: left;
 }
 
 th {
+    background: #8e44ad;
+    color: white;
     font-weight: bold;
 }
+
+tr:nth-child(even) {
+    background: #faf7fc;
+}
+
+tr:hover {
+    background: #f0e4f6;
+}
+
+/* ==============================
+   MENSAJES
+============================== */
 
 .mensaje {
     padding: 12px;
     margin-top: 15px;
-    border-radius: 6px;
+    border-radius: 8px;
+    background: #f3eafa;
+    color: #5e3370;
+}
+
+/* ==============================
+   RESPONSIVE
+============================== */
+
+@media (max-width: 700px) {
+
+    body {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 27px;
+    }
+
+    .formulario {
+        grid-template-columns: 1fr;
+    }
+
+    .campo-completo {
+        grid-column: auto;
+    }
+
+    .seccion {
+        padding: 18px;
+    }
 }
